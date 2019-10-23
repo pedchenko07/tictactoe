@@ -1,5 +1,5 @@
-const ROWS_COUNT = 3;
-const COLS_COUNT = 3;
+import { DATASET_ID, ROWS_COUNT, COLS_COUNT } from './constants';
+
 const field = document.querySelector('.field');
 
 function generateCols(row, colsCount, rowId) {
@@ -7,7 +7,7 @@ function generateCols(row, colsCount, rowId) {
     const id = rowId * 3 + i;
     const col = document.createElement('div');
     col.id = `c-${id}`;
-    col.dataset.id = id;
+    col.dataset[DATASET_ID] = id;
     col.className = 'cell';
     row.appendChild(col);
   }
